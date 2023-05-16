@@ -4,6 +4,7 @@ import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
+import ua.tabarkevych.locationsaver.feature.users.di.usersModule
 
 expect fun platformModule(): Module
 
@@ -17,5 +18,5 @@ fun initKoin(appDeclaration: KoinAppDeclaration = {}) =
 fun initKoin() = initKoin() {}
 
 fun commonModule() = module {
-    includes(platformModule())
+    includes(platformModule(), usersModule())
 }
